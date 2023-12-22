@@ -30,7 +30,7 @@ class EngineConfig:
         self.num_gpu_shard = int(os.getenv('NUM_GPU_SHARD', 1))
         self.use_full_metrics = os.getenv('USE_FULL_METRICS', 'True') == 'True'
         self.quantization = os.getenv('QUANTIZATION', None)
-        self.dtype = "auto" if self.quantization is None else "half"
+        self.dtype = "float16"  #"auto" if self.quantization is None else "half"
         self.disable_log_stats = os.getenv('DISABLE_LOG_STATS', 'True') == 'True'
         self.gpu_memory_utilization = float(os.getenv('GPU_MEMORY_UTILIZATION', 0.98))
         os.makedirs(self.model_base_path, exist_ok=True)

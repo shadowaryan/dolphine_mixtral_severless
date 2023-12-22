@@ -1,8 +1,8 @@
 # Base image - Set default to CUDA 11.8
-ARG WORKER_CUDA_VERSION=11.8
+ARG WORKER_CUDA_VERSION=12.1
 FROM runpod/base:0.4.2-cuda${WORKER_CUDA_VERSION}.0 as builder
 
-ARG WORKER_CUDA_VERSION=11.8 # Required duplicate to keep in scope
+ARG WORKER_CUDA_VERSION=12.1 # Required duplicate to keep in scope
 
 # Set Environment Variables
 ENV WORKER_CUDA_VERSION=${WORKER_CUDA_VERSION} \
